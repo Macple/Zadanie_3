@@ -15,7 +15,7 @@ import pl.plewko.android.zadanie3.datebase.WydatekTable;
 
 /**
  * Created by Maciek on 02.01.14.
- * TodoDetailActivity allows to enter a new wydatek
+ * WydatkiDetailActivity allows to enter a new wydatek
  * or to change an existing
  */
 public class WydatkiDetailActivity extends Activity {
@@ -126,6 +126,6 @@ public class WydatkiDetailActivity extends Activity {
 
     private void makeToast() {
         Toast.makeText(WydatkiDetailActivity.this, "Wprowadz nazwę wydatku",
-                Toast.LENGTH_LONG).show();
+                2).show();
     }
 }

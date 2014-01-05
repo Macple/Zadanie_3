@@ -4,32 +4,27 @@ import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
 /**
- * Created by Maciek on 02.01.14.
+ * Created by Maciek on 03.01.14.
  */
-public class WydatekTable {
+public class TypTable {
 
     //Datbase Table Constant Names
-    public static final String TABLE_WYDATEK = "wydatek";
+    public static final String TABLE_TYP = "typ";
     public static final String COLUMN_ID = "_id";
-    public static final String COLUMN_TYP = "typ";
     public static final String COLUMN_NAZWA = "nazwa";
-    public static final String COLUMN_DATA = "data";
-    public static final String COLUMN_WARTOSC = "wartosc";
+
 
     //Database creation SQL statement
     private static final String COLUMN_CREATE = "create table "
-            + TABLE_WYDATEK
+            + TABLE_TYP
             + "("
             + COLUMN_ID + " integer primary key autoincrement,"
-            + COLUMN_TYP + " integer,"
-            + COLUMN_NAZWA + " text not null,"
-            + COLUMN_DATA + " text not null,"
-            + COLUMN_WARTOSC + " text not null"
+            + COLUMN_NAZWA + " text not null"
             + ");";
 
     public static void onCreate(SQLiteDatabase datebase) {
         datebase.execSQL(COLUMN_CREATE);
-        Log.d("onCreate", "baza stworzona");
+        Log.d("onCreate", "TypTable stworzona");
     }
 
     public static void onUpgrade(SQLiteDatabase database, int oldVersion,
@@ -37,7 +32,7 @@ public class WydatekTable {
         Log.w(WydatekTable.class.getName(), "Upgrading database from version "
                 + oldVersion + " to " + newVersion
                 + ", which will destroy all old data");
-        database.execSQL("DROP TABLE IF EXISTS " + TABLE_WYDATEK);
+        database.execSQL("DROP TABLE IF EXISTS " + TABLE_TYP);
         onCreate(database);
     }
 }

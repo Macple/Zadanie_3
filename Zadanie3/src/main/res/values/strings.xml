@@ -9,6 +9,6 @@
     <string name="wydatek_name">Nazwa Wydatku</string>
     <string name="wydatek_date">Data Wydatku</string>
     <string name="wydatek_type">Typ Wydatku</string>
-    <string name="wydatek_value">Watość Wydatku</string>
+    <string name="wydatek_value">Wartość Wydatku</string>
     <string name="wydatek_confirm">Potwierdź</string>
 </resources> 

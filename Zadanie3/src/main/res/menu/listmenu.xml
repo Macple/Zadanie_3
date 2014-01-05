@@ -4,7 +4,7 @@
     <item
         android:id="@+id/insert"
         android:showAsAction="always"
-        android:title="Insert">
+        android:title="@string/menu_insert">
     </item>
 
 </menu>

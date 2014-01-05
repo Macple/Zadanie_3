@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
+
 import pl.plewko.android.zadanie3.contentprovider.WydatkiContentProvider;
 import pl.plewko.android.zadanie3.datebase.WydatekTable;
 
@@ -38,7 +39,7 @@ public class WydatkiOverviewActivity extends ListActivity implements
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.wydatki_list);
-            this.getListView().setDividerHeight(5);
+            this.getListView().setDividerHeight(8);
             fillData();
             registerForContextMenu(getListView());
         }
@@ -99,9 +100,11 @@ public class WydatkiOverviewActivity extends ListActivity implements
 
             // Fields from the database (projection)
             // Must include the _id column for the adapter to work
-            String[] from = new String[] { WydatekTable.COLUMN_NAZWA };
+            String[] from = new String[] { WydatekTable.COLUMN_DATA, WydatekTable.COLUMN_TYP,
+                    WydatekTable.COLUMN_NAZWA, WydatekTable.COLUMN_WARTOSC };
             // Fields on the UI to which we map
-            int[] to = new int[] { R.id.label };
+            int[] to = new int[] { R.id.data_label, R.id.typ_label ,R.id.nazwa_label,
+                    R.id.wartosc_label  };
 
             getLoaderManager().initLoader(0, null, this);
             adapter = new SimpleCursorAdapter(this, R.layout.wydatki_row, null, from,
@@ -120,7 +123,8 @@ public class WydatkiOverviewActivity extends ListActivity implements
         // creates a new loader after the initLoader () call
         @Override
         public Loader<Cursor> onCreateLoader(int id, Bundle args) {
-            String[] projection = { WydatekTable.COLUMN_ID, WydatekTable.COLUMN_NAZWA };
+            String[] projection = { WydatekTable.COLUMN_ID, WydatekTable.COLUMN_NAZWA,
+                    WydatekTable.COLUMN_TYP, WydatekTable.COLUMN_DATA, WydatekTable.COLUMN_WARTOSC};
             CursorLoader cursorLoader = new CursorLoader(this,
                     WydatkiContentProvider.CONTENT_URI, projection, null, null, null);
             return cursorLoader;
