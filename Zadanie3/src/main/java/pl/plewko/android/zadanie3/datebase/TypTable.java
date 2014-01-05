@@ -15,15 +15,33 @@ public class TypTable {
 
 
     //Database creation SQL statement
-    private static final String COLUMN_CREATE = "create table "
+    private static final String CREATE_TABLE = "create table "
             + TABLE_TYP
             + "("
             + COLUMN_ID + " integer primary key autoincrement,"
             + COLUMN_NAZWA + " text not null"
             + ");";
 
+    private static final String TYP_1_INSERT = "insert into "
+            + TABLE_TYP
+            + " values "
+            + "('1', 'jedzenie');";
+
+    private static final String TYP_2_INSERT = "insert into "
+            + TABLE_TYP
+            + " values "
+            + "('2', 'picie');";
+
+    private static final String TYP_3_INSERT = "insert into "
+            + TABLE_TYP
+            + " values "
+            + "('3', 'opłaty');";
+
     public static void onCreate(SQLiteDatabase datebase) {
-        datebase.execSQL(COLUMN_CREATE);
+        datebase.execSQL(CREATE_TABLE);
+        datebase.execSQL(TYP_1_INSERT);
+        datebase.execSQL(TYP_2_INSERT);
+        datebase.execSQL(TYP_3_INSERT);
         Log.d("onCreate", "TypTable stworzona");
     }
 

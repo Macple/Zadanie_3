@@ -177,7 +177,7 @@ public class WydatkiContentProvider extends ContentProvider {
     private void checkColumns(String[] projection) {
         String[] available = { WydatekTable.COLUMN_NAZWA,
                 WydatekTable.COLUMN_DATA, WydatekTable.COLUMN_TYP, WydatekTable.COLUMN_WARTOSC,
-        WydatekTable.COLUMN_ID };
+                WydatekTable.COLUMN_ID };
         if (projection != null) {
             HashSet<String> requestedColumns = new HashSet<String>(Arrays.asList(projection));
             HashSet<String> availableColumns = new HashSet<String>(Arrays.asList(available));
@@ -189,4 +189,3 @@ public class WydatkiContentProvider extends ContentProvider {
     }
 
 }
-

@@ -26,15 +26,12 @@ import pl.plewko.android.zadanie3.datebase.WydatekTable;
  */
 public class WydatkiOverviewActivity extends ListActivity implements
         LoaderManager.LoaderCallbacks<Cursor> {
-        private static final int ACTIVITY_CREATE = 0;
-        private static final int ACTIVITY_EDIT = 1;
         private static final int DELETE_ID = Menu.FIRST + 1;
         // private Cursor cursor;
         private SimpleCursorAdapter adapter;
 
 
         /** Called when the activity is first created. */
-
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -93,7 +90,6 @@ public class WydatkiOverviewActivity extends ListActivity implements
 
             startActivity(i);
         }
-
 
 
         private void fillData() {

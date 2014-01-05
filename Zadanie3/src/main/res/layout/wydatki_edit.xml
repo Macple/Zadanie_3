@@ -13,6 +13,18 @@
             android:imeOptions="actionNext" >
         </EditText>
 
+         <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:prompt="@string/spinner_title"
+            android:tag="@string/spinner_title"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+         />
+
         <EditText
             android:id="@+id/wydatek_type_edit"
             android:layout_width="match_parent"
@@ -27,6 +39,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:inputType="date"
             android:hint="@string/wydatek_date"
             android:imeOptions="actionNext" >
         </EditText>
@@ -36,6 +49,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:inputType="number"
             android:hint="@string/wydatek_value"
             android:imeOptions="actionNext" >
         </EditText>
@@ -49,4 +63,4 @@
     </Button>
 
 
-</LinearLayout> 
+</LinearLayout>

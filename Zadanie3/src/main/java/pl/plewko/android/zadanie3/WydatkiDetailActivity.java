@@ -54,7 +54,9 @@ public class WydatkiDetailActivity extends Activity {
 
         confirmButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                if (TextUtils.isEmpty(mName.getText().toString())) {
+                if (TextUtils.isEmpty(mName.getText().toString()) ||
+                        TextUtils.isEmpty(mDate.getText().toString()) ||
+                        TextUtils.isEmpty(mValue.getText().toString())) {
                     makeToast();
                 } else {
                     setResult(RESULT_OK);
@@ -125,7 +127,7 @@ public class WydatkiDetailActivity extends Activity {
     }
 
     private void makeToast() {
-        Toast.makeText(WydatkiDetailActivity.this, "Wprowadz nazwę wydatku",
+        Toast.makeText(WydatkiDetailActivity.this, "Wprowadz wszystkie dane",
                 2).show();
     }
 }
